@@ -14,5 +14,5 @@ export const getInvidoualTodo = async (id) => {
 };
 
 export const deleteTodo = async (id) => {
-  await axios.delete(`api/${id}`);
+  await axios.delete(`${api}/${id}`);
 };

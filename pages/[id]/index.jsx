@@ -6,7 +6,7 @@ function Todo({ todo }) {
   const { back } = useRouter();
   return (
     <>
-      <button className="btn-sm btn-primary" onClick={() => back()}>
+      <button className="btn btn-sm btn-primary" onClick={() => back()}>
         Go Back
       </button>
       {<div>User ID: {todo.userId}</div>}

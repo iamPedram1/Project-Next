@@ -1,6 +1,7 @@
 import React from "react";
+import Link from "next/link";
 
-function TodoList({ todos }) {
+function TodoList({ todos, onDelete }) {
   return (
     <ul className="list-group">
       {todos.map((todo) => (
@@ -13,22 +14,22 @@ function TodoList({ todos }) {
                 </Link>
               </div>
               <div className="col">
-                <button
-                  onClick={() => deleteTodo(todo.id)}
-                  className="btn btn-danger rounded-pill mx-5"
-                >
-                  Delete
-                </button>
-              </div>
-              <div className="col">
                 <div className="d-flex justify-content-center align-items-center">
                   <label className="form-check-label mx-2">Finished:</label>
                   <input
                     className="form-check-input me-1"
                     type="checkbox"
-                    checked={todo.completed}
+                    defaultChecked={todo.completed}
                   />
                 </div>
+              </div>
+              <div className="col">
+                <button
+                  onClick={() => onDelete(todo.id)}
+                  className="btn btn-danger rounded-pill btn-sm mx-5"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </li>
